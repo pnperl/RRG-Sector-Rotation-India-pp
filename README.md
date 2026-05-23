@@ -36,7 +36,7 @@ Our implementation uses **EMA-based ratio normalization**, a significant improve
 <!-- ![RS Ratio](imgs/rs_enhanced.png) -->
 
 <p align="center">
-  <img src="imgs/rs_enhanced.png" width="60%">
+  <img src="Imgs/rs_enhanced.png" width="60%">
 </p>
 
 Formulas in Text:
@@ -59,7 +59,7 @@ RS_Ratio = 100 × (EMA_RS / Rolling_Mean(EMA_RS, m))
 <!-- ![RS Ratio](imgs/rs_standard.png) -->
 
 <p align="center">
-  <img src="imgs/rs_standard.png" width="60%">
+  <img src="Imgs/rs_standard.png" width="60%">
 </p>
 
 Formulas in Text:
@@ -81,7 +81,7 @@ RS_Ratio = 100 + 10 × (JdK_RS - Rolling_Mean(JdK_RS, m)) / Rolling_StdDev(JdK_R
 <!-- ![RS Momentum](imgs/mom_enhanced.png) -->
 
 <p align="center">
-  <img src="imgs/mom_enhanced.png" width="60%">
+  <img src="Imgs/mom_enhanced.png" width="60%">
 </p>
 
 Formulas in Text:
@@ -105,7 +105,7 @@ RS_Momentum = 100 + 100 × EMA_ROC
 <!-- ![RS Momentum](imgs/mom_standard.png) -->
 
 <p align="center">
-  <img src="imgs/mom_standard.png" width="70%">
+  <img src="Imgs/mom_standard.png" width="70%">
 </p>
 
 Formulas in Text:
