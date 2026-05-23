@@ -1029,7 +1029,6 @@ def generate_chart():
         loader = initialize_api_loader()
         if loader:
             st.session_state.loader = loader
-            render_storage_status(st.session_state.loader)
         else:
             # Return empty chart if loader fails
             calculator = RRGCalculator(
