@@ -1029,7 +1029,6 @@ def generate_chart():
         loader = initialize_api_loader()
         if loader:
             st.session_state.loader = loader
-            render_storage_status(st.session_state.loader)
         else:
             # Return empty chart if loader fails
             calculator = RRGCalculator(
@@ -1186,6 +1185,32 @@ def generate_chart():
 
 
 def main():
+    # Mobile responsive CSS: stack columns and relax tight horizontal controls on small screens
+    st.markdown("""
+    <style>
+    @media (max-width: 768px) {
+        /* Stack Streamlit columns vertically on mobile */
+        div[data-testid="stHorizontalBlock"] {
+            flex-wrap: wrap !important;
+            gap: 0.5rem !important;
+        }
+        div[data-testid="stHorizontalBlock"] > div[data-testid="column"] {
+            min-width: 100% !important;
+            flex: 1 1 100% !important;
+        }
+        /* Keep titles and controls readable without clipping */
+        h1 {
+            font-size: 1.35rem !important;
+            line-height: 1.25 !important;
+        }
+        div[data-testid="stRadio"] > div {
+            flex-direction: column !important;
+            gap: 0.35rem !important;
+        }
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
     # Initialize default items will be called in middle pane before chart generation
     # This prevents double initialization and double chart generation
     
@@ -1270,11 +1295,21 @@ def main():
             flex-direction: row;
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
         }
         div[data-testid="stRadio"] > div > label {
             flex: 0 0 auto;
             white-space: nowrap;
             min-width: fit-content;
+        }
+        @media (max-width: 768px) {
+            div[data-testid="stRadio"] > div {
+                flex-direction: column;
+                gap: 8px;
+            }
+            div[data-testid="stRadio"] > div > label {
+                white-space: normal;
+            }
         }
         </style>
         """, unsafe_allow_html=True)
